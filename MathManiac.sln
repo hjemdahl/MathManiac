@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathManiac", "MathManiac\MathManiac.csproj", "{AD0F603F-7C12-4AE8-B719-137EEF5EDBA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD0F603F-7C12-4AE8-B719-137EEF5EDBA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD0F603F-7C12-4AE8-B719-137EEF5EDBA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD0F603F-7C12-4AE8-B719-137EEF5EDBA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD0F603F-7C12-4AE8-B719-137EEF5EDBA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
