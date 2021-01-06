@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Projekt DT071G Programmering i C# .NET - Moa Hjemdahl 2021
+//Consoleapplication where you enter birtmonth and date and have to pass two math tests to get a Math Maniac superhero name.
+
+using System;
 using System.Globalization;
 using System.Threading.Tasks;
 using static System.Console;
@@ -12,6 +15,9 @@ namespace MathManiac
             Welcome();
         }
 
+        //Welcome method.
+        //Instantiates NameList class, prints out list of 3 names with the most recent on top.
+        //Sends instantiated list as parameter on its way to the goal method.
         static void Welcome()
         {
             NameList namelist = new NameList();
@@ -27,6 +33,11 @@ namespace MathManiac
 
             createSuperheroName(namelist);
         }
+
+        //Method to create superhero name.
+        //Instantiates SuperheroName class, asks fot birthmonth and date, reads input and checks if it's a valid date, not null or empty and is 4 charaters long.
+        //Then splits string into seperate month and day and passes them as parameters to SuperheroName class to set the names.
+        //Sends instantiated list and superhero name as parameters on its way to the goal method.
 
         static void createSuperheroName(NameList namelist)
         {
@@ -63,6 +74,9 @@ namespace MathManiac
             AcceptChallangeOne(superheroname, namelist);
         }
 
+        //Method to enter or escpare first challange.
+        //Informs of the two challanges that need to be passed, gives options to enter or escape, reads key and executes in switch.
+        //Sends instantiated list and superhero name as parameters on its way to the goal method.
         static void AcceptChallangeOne(SuperheroName superheroname, NameList namelist)
         {
             do
@@ -87,6 +101,11 @@ namespace MathManiac
             } while (ReadKey().Key != ConsoleKey.Escape);
         }
 
+        //Method for first challange
+        //Instantiates random class, prints round and points status, creates two random numbers between 1-12 and it's result when mulitplyed.
+        //Print multiplication challange, reads answer and compares it to result. If correct, one point is added. When 4 points is reached method to
+        //accept challange two is called. Every round is counted and if failed to get 4 points on 6 rounds failed mathod is called.
+        //Sends instantiated list and superhero name as parameters on its way to the goal method.
         static void ChallengeOne(SuperheroName superheroname, NameList namelist)
         {
             Random random = new Random();
@@ -128,6 +147,9 @@ namespace MathManiac
             Failed();
         }
 
+        //Method to enter or escpare second challange.
+        //Informs about challange, gives options to enter or escape, reads key and executes in switch.
+        //Sends instantiated list and superhero name as parameters on its way to the goal method.
         static void AcceptChallangeTwo(SuperheroName superheroname, NameList namelist)
         {
             do
@@ -152,6 +174,11 @@ namespace MathManiac
             } while (ReadKey().Key != ConsoleKey.Escape);
         }
 
+        //Method for second challange
+        //Instantiates random class, prints round and points status, creates two random numbers between 1-300 and it's result when added.
+        //Print addition challange, reads answer and compares it to result. If correct, one point is added. When 4 points is reached goal method is called.
+        //Every round is counted and if failed to get 4 points on 6 rounds failed mathod is called.
+        //Sends instantiated list and superhero name as parameters on its way to the goal method.
         static void ChallengeTwo(SuperheroName superheroname, NameList namelist)
         {
             Random random = new Random();
@@ -193,6 +220,8 @@ namespace MathManiac
             Failed();
         }
 
+        //Method for failed challanges
+        //Informs of failiure and calls welcome method after 4 seconds.
         static void Failed()
         {
             Clear();
@@ -203,6 +232,9 @@ namespace MathManiac
             Welcome();
         }
 
+        //Method for completed challanges
+        //Adds recieved paramater for superheroname to recieved parameter for namelist. Print out earned name and options to escape or go again.
+        //Reds key to execute options in switch.
         static void Goal(SuperheroName superheroname, NameList namelist)
         {
             do

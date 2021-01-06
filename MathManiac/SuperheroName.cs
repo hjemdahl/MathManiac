@@ -1,9 +1,15 @@
-﻿using System;
+﻿//Projekt DT071G Programmering i C# .NET - Moa Hjemdahl 2021
+//Consoleapplication where you enter birtmonth and date and have to pass two math tests to get a Math Maniac superhero name.
+
+//Class for Math Maniac superhero names.
+
+using System;
 
 namespace MathManiac
 {
     public class SuperheroName
     {
+        //Properties to set and get names.
         private string _month;
         private string _day;
 
@@ -19,6 +25,7 @@ namespace MathManiac
             get { return _day; }
         }
 
+        //Method who takes birthmonth and day as parameters to determen the name in i switch.
         public void setSuperheroName(string month, string day)
         {
             switch (month)
