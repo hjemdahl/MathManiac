@@ -26,7 +26,7 @@ namespace MathManiac
         }
 
         //Method who takes birthmonth and day as parameters to determen the name in i switch.
-        public void setSuperheroName(string month, string day)
+        public void SetSuperheroName(string month, string day)
         {
             switch (month)
             {

@@ -1,5 +1,6 @@
 ﻿//Projekt DT071G Programmering i C# .NET - Moa Hjemdahl 2021
 //Consoleapplication where you enter birtmonth and date and have to pass two math tests to get a Math Maniac superhero name.
+//To start application wtire "dotnet run" in colsole, and to quit press Ctrl + C.
 
 using System;
 using System.Globalization;
@@ -26,12 +27,12 @@ namespace MathManiac
             WriteLine("\n🄼 🄰 🅃 🄷 🄼 🄰 🄽 🄸 🄰 🄲\n");
             WriteLine("Our three most recent maniacs:");
 
-            foreach (SuperheroName superheroname in namelist.getNames())
+            foreach (SuperheroName superheroname in namelist.GetNames())
             {
                 WriteLine("* " + superheroname.Month + " " + superheroname.Day);
             }
 
-            createSuperheroName(namelist);
+            CreateSuperheroName(namelist);
         }
 
         //Method to create superhero name.
@@ -39,7 +40,7 @@ namespace MathManiac
         //Then splits string into seperate month and day and passes them as parameters to SuperheroName class to set the names.
         //Sends instantiated list and superhero name as parameters on its way to the goal method.
 
-        static void createSuperheroName(NameList namelist)
+        static void CreateSuperheroName(NameList namelist)
         {
             SuperheroName superheroname = new SuperheroName();
 
@@ -70,7 +71,7 @@ namespace MathManiac
             month = dateInput.Substring(0, 2);
             day = dateInput.Substring(2, 2);
 
-            superheroname.setSuperheroName(month, day);
+            superheroname.SetSuperheroName(month, day);
             AcceptChallangeOne(superheroname, namelist);
         }
 
@@ -239,14 +240,14 @@ namespace MathManiac
         {
             do
             {
-                namelist.addName(superheroname);
+                namelist.AddName(superheroname);
 
                 Clear();
                 WriteLine("\n🄼 🄰 🅃 🄷 🄼 🄰 🄽 🄸 🄰 🄲\n");
-                WriteLine("Congratulations my friend, you are a true mathmaniac!\nYou finally earnd your name:\n\n" + superheroname.Month + " " + superheroname.Day + "\n");
+                WriteLine("Congratulations my friend, you are a true mathmaniac!\nYou finally earned your name:\n\n" + superheroname.Month + " " + superheroname.Day + "\n");
 
                 WriteLine("\nEscape? Press Esc.");
-                WriteLine("Or go again? Press Enter.");
+                WriteLine("Or go again to earn a MathManiac superheroname for your pet? Press Enter.");
 
                 ConsoleKeyInfo key = ReadKey();
 

@@ -13,7 +13,7 @@ namespace MathManiac
     public class NameList
     {
         public List<SuperheroName> names = new List<SuperheroName>();
-        string json = null;
+        string json;
 
         //If JSON file exists, open read and deserialize.
         public NameList()
@@ -25,29 +25,29 @@ namespace MathManiac
             }
         }
 
+        //Serializes list and creates/writes over JSON file.
+        public void CreateUpdateList()
+        {
+            json = JsonConvert.SerializeObject(names);
+            File.WriteAllText(@"namelist.json", json);
+        }
+
         //Reverses back list(after being reversed for print in next method), removes object at index 0 to keep list 3 objects long,
         //adds object to list and then calls method to update list in JSON file.
-        public SuperheroName addName(SuperheroName superheroname)
+        public SuperheroName AddName(SuperheroName superheroname)
         {
             names.Reverse();
             names.RemoveAt(0);
             names.Add(superheroname);
-            createUpdateList();
+            CreateUpdateList();
             return superheroname;
         }
 
         //Reverses list for print to console and return reversed list.
-        public List<SuperheroName> getNames()
+        public List<SuperheroName> GetNames()
         {
             names.Reverse();
             return names;
-        }
-
-        //Serializes list and creates/writes over JSON file.
-        public void createUpdateList()
-        {
-            json = JsonConvert.SerializeObject(names);
-            File.WriteAllText(@"namelist.json", json);
         }
     }
 }
